@@ -17,6 +17,7 @@ function addTask() {
         taskInput.value = '';
         updateTaskColors();
     }
+	toggleEmptyMessage();
 }
 
 function completeTask(taskId) {
@@ -26,14 +27,35 @@ function completeTask(taskId) {
 
 function removeTask(taskId) {
     const task = document.getElementById(taskId);
-    task.remove();
+    task.remove();	
     updateTaskColors();
+	toggleEmptyMessage();
 }
 
 function updateTaskColors() {
     const tasks = document.querySelectorAll('li');
 
     tasks.forEach((task, index) => {
-        task.style.backgroundColor = index % 2 === 0 ? '#f2f2f2' : '#ffffff';
+        task.style.backgroundColor = index % 2 === 0 ? '#808080' : 'White';
     });
+}
+
+
+function removeAllTasks() {
+    const newTaskList = document.getElementById('newTaskList');
+    newTaskList.innerHTML = '';
+    taskIdCounter = 0;
+    updateTaskColors();
+	toggleEmptyMessage();
+}
+
+function toggleEmptyMessage() {
+    const emptyMessage = document.getElementById('emptyMessage');
+    const newTaskList = document.getElementById('newTaskList');
+
+    if (newTaskList.children.length === 0) {
+        emptyMessage.style.display = 'block';
+    } else {
+        emptyMessage.style.display = 'none';
+    }
 }
