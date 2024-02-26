@@ -4,36 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Планирование</title>
 </head>
 <body>
 
 <div id="app">
-	<h1>Планирование</h1>
+    <h1>Планирование</h1>
     <input type="text" id="taskInput" placeholder="Введите сюда">
-    <button  onclick="addTask()">Добавить</button>
-	<button  class ="button button2" onclick="removeAllTasks()">Удалить все задачи</button>
+    <button onclick="addTask()">Добавить</button>
+    <button class="button button2" onclick="removeAllTasks()">Удалить все задачи</button>
     <ul id="taskList"></ul>
 </div>
 
+
+
 <div id="app">
-<div id="newTasks">
-    <h2>Добавленые задачи</h2>
-    <ul id="newTaskList"></ul>
-	<div id="emptyMessage">Не найдено ни одного дела</div>
+    <div id="newTasks">
+        <h2>Добавленные задачи</h2>
+        <ul id="newTaskList"></ul>
+        <div id="emptyMessage">Не найдено ни одного дела</div>
+    </div>
+	
+<div id="filters">
+    <a href="#" id="filterAll" onclick="applyFilter('all')">Все</a>
+    <a href="#" id="filterCompleted" onclick="applyFilter('completed')">Сделанные</a>
+    <a href="#" id="filterIncomplete" onclick="applyFilter('incomplete')">Не сделанные</a>
+    <a href="#" id="sortByName" onclick="sortTasksByName()">Сортировать по имени</a>
 </div>
 </div>
+
 
 <script src="sc.js"></script>
 
-
 <div class="wrapper">
-
-  <div class="content"></div>
-
-  <div class="footer">Co.</div>
-
+    <div class="content"></div>
+    <div class="footer">Co.</div>
 </div>
+
 </body>
 </html>

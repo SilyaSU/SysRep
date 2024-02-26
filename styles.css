@@ -3,6 +3,23 @@ body {
     background-color: #DCDCDC;
 }
 
+#filters {
+    margin-top: 20px;
+}
+
+#filters a {
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #000;
+    font-weight: normal;
+    transition: font-weight 0.3s ease-in-out;
+}
+
+#filters a:hover {
+    font-weight: bold;
+}
+
 #app {
     max-width: 750px;
     margin: 40px auto;
@@ -10,28 +27,24 @@ body {
     background-color: #2F4F4F;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden; 
+    overflow: auto;
 }
 
 button {
-  background-color: #white;
-  border: 1 px;
-  color: black;
-  padding: 8px 15px;
-  font-size: 16px;
-  
+    background-color: white;
+    border: 1px;
+    color: black;
+    padding: 8px 15px;
+    font-size: 16px;
 }
 
 .button2 {
-	background-color: #f44336;
-	border: 1 px;
-  color: black;
-  padding: 8.45px 15px;
-  font-size: 16px;
-	}
-	
-
-
+    background-color: #f44336;
+    border: 1px;
+    color: black;
+    padding: 8.45px 15px;
+    font-size: 16px;
+}
 
 h1 {
     text-align: center;
@@ -42,63 +55,80 @@ h2 {
     color: white;
 }
 
-
 ul {
     list-style: none;
     padding: 0;
-    overflow-y: auto; 
+    overflow-y: auto;
     max-height: 300px;
+    width: 100%;
 }
 
 li {
-    padding: 10px;	
-    margin: 5px 0;
+    padding: 10px;
+    margin-bottom: 10px;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
 }
 
+li input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+li button {
+    margin-left: auto;
+	background-color: red;
+}
+
+li:hover {
+    color: #A52A2A;
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: #999;
+}
 
 .task-completed {
     background-color: #e0e0e0;
 }
 
 input[type="text"] {
-	width: 95%;
-	padding: 11px;
-	margin-bottom: 8px;
-	border: 1px solid #000;
+    width: 95%;
+    padding: 11px;
+    margin-bottom: 8px;
+    border: 1px solid #000;
 }
 
-
-
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 html,
 body {
-  height: 80%;
-
+    height: 80%;
 }
+
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 80%;
-
+    display: flex;
+    flex-direction: column;
+    height: 80%;
 }
+
 .content {
-  flex: 1 0 auto;
-  
-}
-.footer {
-  flex: 0 0 auto;
-  text-align: center;
+    flex: 1 0 auto;
 }
 
+.footer {
+    flex: 0 0 auto;
+    text-align: center;
+}
 
 #emptyMessage {
     display: none;
     text-align: center;
     margin-top: 20px;
-    color: white;
+    color: red;
 }
+	
