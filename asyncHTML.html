@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>asyncHTML</title>
+</head>
+<body>
+
+<h2>Async</h2>
+
+<script src="async.js"></script>
+<script>
+  //const myCounter = createCounter(200);
+  //myCounter.start();
+	setTimeout(() => {
+            //myCounter.pause();
+	    //myCounter.stop();
+	    //console.log("Hello, World!");
+	    //myCounter.start(); 	
+          }, 5000); 
+
+  //countDownFromN(5).then(() => {
+    //console.log('Счёт окончен');
+  //});
+
+const username = 'SilyaSU';
+getFirstRepository(username)
+  .then(repositoryName => {
+    console.log(`First repository for ${username}: ${repositoryName}`);
+  })
+  .catch(error => {
+    console.error(`Error: ${error.message}`);
+  });
+
+(async () => {
+  try {
+    await getGithubUser();
+  } catch (error) {
+    console.error(`Error: ${error.message}`);
+  }
+})();
+
+</script>
+
+</body>
+</html>
